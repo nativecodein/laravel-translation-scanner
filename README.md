@@ -17,6 +17,10 @@ Stop manually copy-pasting strings into your language files. Run one Artisan com
 - **Automatic discovery** — finds every `__()`, `trans()`, and `t()` call across your codebase
 - **Inertia React aware** — scans `.js`, `.ts`, `.jsx`, and `.tsx` files for `t("...")`, `t(\`...\`)`, and `t(variable)` usage
 - **Local-variable resolution** — resolves `const title = "Settings"; t(title)` and adds `Settings`
+- **Auto translation support** — generate translated JSON language files instantly
+- **Bulk translate support** — translate multiple locales in one command
+- **Provider fallback system** — automatically switches between translation providers
+- **Rate-limit protection** — built-in delay handling to reduce API blocking
 - **Non-destructive** — only appends missing keys; never overwrites your existing translations
 - **Sorted output** — keys are alphabetically sorted in `en.json` for clean diffs
 - **Smart exclusions** — skips `vendor/`, `node_modules/`, `bootstrap/`, `storage/`, `tests/`, and other noise
@@ -36,7 +40,7 @@ The service provider is auto-discovered. No further setup required.
 
 ---
 
-## Usage
+# Scan Translations
 
 Run the scanner from your Laravel project root:
 
@@ -50,6 +54,66 @@ The command will:
 2. Recursively scan your project for translatable strings.
 3. Append any missing keys with the key as the default value.
 4. Save the sorted `en.json` back to disk.
+
+---
+
+# Auto Translate Language Files
+
+Generate translated language JSON files automatically:
+
+```bash
+php artisan translations:translate ta
+```
+
+Example generated file:
+
+```txt
+resources/lang/ta.json
+```
+
+---
+
+# Bulk Translate
+
+Translate multiple languages in one command:
+
+```bash
+php artisan translations:translate ta ar ro
+```
+
+Generated:
+
+```txt
+resources/lang/ta.json
+resources/lang/ar.json
+resources/lang/ro.json
+```
+
+---
+
+# Translation Providers
+
+The package automatically falls back between:
+
+```txt
+Google Translate
+LibreTranslate
+Lingva Translate
+```
+
+If one provider fails, the next provider is used automatically.
+
+---
+
+# Rate Limit Protection
+
+Built-in API protection:
+
+```php
+usleep(300000);
+```
+
+This helps reduce temporary API blocking from free translation services.
 
 ---
 
@@ -115,10 +179,10 @@ Translation scan completed.
 
 ## Supported File Types
 
-| Extension    | Scans For                |
-| ------------ | ------------------------ |
-| `.php`       | `__('...')`, `trans('...')` |
-| `.blade.php` | `__('...')`, `trans('...')` |
+| Extension    | Scans For                               |
+| ------------ | --------------------------------------- |
+| `.php`       | `__('...')`, `trans('...')`             |
+| `.blade.php` | `__('...')`, `trans('...')`             |
 | `.js`        | `t('...')`, `t(\`...\`)`, `t(variable)` |
 | `.ts`        | `t('...')`, `t(\`...\`)`, `t(variable)` |
 | `.jsx`       | `t('...')`, `t(\`...\`)`, `t(variable)` |
@@ -138,18 +202,19 @@ routes/
 storage/
 tests/
 vendor/
+node_modules/
 ```
 
 ---
 
 ## Supported Laravel Versions
 
-| Laravel | Status     |
-| ------- | ---------- |
-| 10.x    | Supported  |
-| 11.x    | Supported  |
-| 12.x    | Supported  |
-| 13.x    | Supported  |
+| Laravel | Status    |
+| ------- | --------- |
+| 10.x    | Supported |
+| 11.x    | Supported |
+| 12.x    | Supported |
+| 13.x    | Supported |
 
 ---
 
@@ -159,10 +224,12 @@ vendor/
 composer update nativecodein/laravel-translation-scanner
 ```
 
-Then re-run the scan:
+Then re-run:
 
 ```bash
 php artisan translations:scan
+
+php artisan translations:translate ta ar ro
 ```
 
 ---
@@ -181,7 +248,7 @@ If you discover any security-related issues, please email **oss@nativecode.in** 
 
 ## Support
 
-- Issues: [github.com/nativecodein/laravel-translation-scanner/issues](https://github.com/nativecodein/laravel-translation-scanner/issues)
+- Issues: https://github.com/nativecodein/laravel-translation-scanner/issues
 - Email: **oss@nativecode.in**
 
 ---

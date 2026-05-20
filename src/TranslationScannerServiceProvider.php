@@ -4,6 +4,7 @@ namespace NativeCodeIn\TranslationScanner;
 
 use Illuminate\Support\ServiceProvider;
 use NativeCodeIn\TranslationScanner\Commands\ScanTranslationsCommand;
+use NativeCodeIn\TranslationScanner\Commands\TranslateJsonCommand;
 
 class TranslationScannerServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,7 @@ class TranslationScannerServiceProvider extends ServiceProvider
     {
         $this->commands([
             ScanTranslationsCommand::class,
+            TranslateJsonCommand::class,
         ]);
     }
 }

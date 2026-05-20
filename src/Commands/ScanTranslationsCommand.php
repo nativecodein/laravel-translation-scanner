@@ -1,6 +1,6 @@
 <?php
 
-namespace NativeCode\TranslationScanner\Commands;
+namespace NativeCodeIn\TranslationScanner\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;

@@ -1,5 +1,5 @@
 {
-  "name": "nativecode/laravel-translation-scanner",
+  "name": "nativecodein/laravel-translation-scanner",
   "description": "Laravel translation scanner that auto-extracts __(), trans() and t() strings from PHP, Blade, and Inertia React (JS/TS/JSX/TSX) files into resources/lang/en.json. Supports Laravel 10, 11, 12 and 13.",
   "type": "library",
   "license": "MIT",
@@ -42,13 +42,13 @@
   ],
   "autoload": {
     "psr-4": {
-      "NativeCode\\TranslationScanner\\": "src/"
+      "NativeCodeIn\\TranslationScanner\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "NativeCode\\TranslationScanner\\TranslationScannerServiceProvider"
+        "NativeCodeIn\\TranslationScanner\\TranslationScannerServiceProvider"
       ]
     }
   },

@@ -1,9 +1,9 @@
 <?php
 
-namespace NativeCode\TranslationScanner;
+namespace NativeCodeIn\TranslationScanner;
 
 use Illuminate\Support\ServiceProvider;
-use NativeCode\TranslationScanner\Commands\ScanTranslationsCommand;
+use NativeCodeIn\TranslationScanner\Commands\ScanTranslationsCommand;
 
 class TranslationScannerServiceProvider extends ServiceProvider
 {

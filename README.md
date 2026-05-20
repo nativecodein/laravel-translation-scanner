@@ -1,7 +1,7 @@
 # Laravel Translation Scanner
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/nativecode/laravel-translation-scanner.svg?style=flat-square)](https://packagist.org/packages/nativecode/laravel-translation-scanner)
-[![Total Downloads](https://img.shields.io/packagist/dt/nativecode/laravel-translation-scanner.svg?style=flat-square)](https://packagist.org/packages/nativecode/laravel-translation-scanner)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/nativecodein/laravel-translation-scanner.svg?style=flat-square)](https://packagist.org/packages/nativecodein/laravel-translation-scanner)
+[![Total Downloads](https://img.shields.io/packagist/dt/nativecodein/laravel-translation-scanner.svg?style=flat-square)](https://packagist.org/packages/nativecodein/laravel-translation-scanner)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 **Laravel Translation Scanner** is a zero-config Laravel package that scans your entire project — **PHP, Blade, and Inertia React (JS / TS / JSX / TSX)** files — and automatically appends every missing translation string to `resources/lang/en.json`.
@@ -29,7 +29,7 @@ Stop manually copy-pasting strings into your language files. Run one Artisan com
 Install via [Composer](https://getcomposer.org):
 
 ```bash
-composer require nativecode/laravel-translation-scanner
+composer require nativecodein/laravel-translation-scanner
 ```
 
 The service provider is auto-discovered. No further setup required.
@@ -156,7 +156,7 @@ vendor/
 ## Updating
 
 ```bash
-composer update nativecode/laravel-translation-scanner
+composer update nativecodein/laravel-translation-scanner
 ```
 
 Then re-run the scan:

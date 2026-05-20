@@ -1,0 +1,47 @@
+# Composer
+/vendor
+composer.lock
+composer.phar
+
+# PHPUnit
+.phpunit.result.cache
+.phpunit.cache
+phpunit.xml
+
+# Build / coverage
+/build
+/coverage
+clover.xml
+.php-cs-fixer.cache
+.phpstan.cache
+.phpstan.result.cache
+
+# Node (only used in tests/examples)
+/node_modules
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# IDEs / editors
+.idea
+.vscode
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Environment
+.env
+.env.backup
+.env.local
+.env.*.local
+
+# Logs
+*.log

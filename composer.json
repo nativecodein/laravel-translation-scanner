@@ -1,0 +1,61 @@
+{
+  "name": "nativecode/laravel-translation-scanner",
+  "description": "Laravel translation scanner that auto-extracts __(), trans() and t() strings from PHP, Blade, and Inertia React (JS/TS/JSX/TSX) files into resources/lang/en.json. Supports Laravel 10, 11, 12 and 13.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "laravel-package",
+    "translation",
+    "translations",
+    "translation-scanner",
+    "translation-extractor",
+    "translation-generator",
+    "i18n",
+    "l10n",
+    "localization",
+    "internationalization",
+    "lang",
+    "language",
+    "en.json",
+    "inertia",
+    "inertiajs",
+    "react",
+    "blade",
+    "php",
+    "missing-translations",
+    "auto-translate"
+  ],
+  "homepage": "https://github.com/nativecodein/laravel-translation-scanner",
+  "support": {
+    "issues": "https://github.com/nativecodein/laravel-translation-scanner/issues",
+    "source": "https://github.com/nativecodein/laravel-translation-scanner",
+    "email": "oss@nativecode.in"
+  },
+  "authors": [
+    {
+      "name": "NativeCode",
+      "email": "oss@nativecode.in",
+      "homepage": "https://github.com/nativecodein",
+      "role": "Maintainer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "NativeCode\\TranslationScanner\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "NativeCode\\TranslationScanner\\TranslationScannerServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^10.0|^11.0|^12.0|^13.0"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
